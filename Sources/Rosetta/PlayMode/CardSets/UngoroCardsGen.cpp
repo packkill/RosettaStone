@@ -330,6 +330,18 @@ void UngoroCardsGen::AddHunter(std::map<std::string, CardDef>& cards)
     // GameTag:
     // - BATTLECRY = 1
     // --------------------------------------------------------
+    cardDef.ClearData();
+    cardDef.power.AddPowerTask(
+        std::make_shared<IncludeTask>(EntityType::DECK));
+    cardDef.power.AddPowerTask(
+        std::make_shared<FilterStackTask>(SelfCondList{
+            std::make_shared<SelfCondition>(SelfCondition::IsCost(1)),
+            std::make_shared<SelfCondition>(SelfCondition::IsMinion()) }));
+    cardDef.power.AddPowerTask(
+        std::make_shared<RandomTask>(EntityType::STACK, 2));
+    cardDef.power.AddPowerTask(
+        std::make_shared<DrawStackTask>());
+    cards.emplace("UNG_913", cardDef);
 
     // ---------------------------------------- MINION - HUNTER
     // [UNG_914] Raptor Hatchling - COST:1 [ATK:2/HP:1]

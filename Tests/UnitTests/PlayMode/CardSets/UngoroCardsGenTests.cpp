@@ -146,6 +146,59 @@ TEST_CASE("[Hunter : Minion] - UNG_912 : Jeweled Macaw")
     CHECK_EQ(curHand.GetCount(), 5);
     CHECK_EQ(curHand[4]->card->GetRace(), Race::BEAST);
 }
+
+// ---------------------------------------- MINION - HUNTER
+// [UNG_913] Tol'vir Warden - COST:5 [ATK:3/HP:5]
+// - Set: Ungoro, Rarity: Rare
+// --------------------------------------------------------
+// Text: <b>Battlecry:</b> Draw two 1-Cost minions
+//       from your deck.
+// --------------------------------------------------------
+// GameTag:
+// - BATTLECRY = 1
+// --------------------------------------------------------
+TEST_CASE("[Hunter : Minion] - UNG_913 : Tol'vir Warden")
+{
+    GameConfig config;
+    config.player1Class = CardClass::HUNTER;
+    config.player2Class = CardClass::MAGE;
+    config.startPlayer = PlayerType::PLAYER1;
+    config.doFillDecks = false;
+    config.autoRun = false;
+
+    for (int i = 0; i < 30; i += 5)
+    {
+        config.player1Deck[i] = Cards::FindCardByName("Chillwind Yeti");
+        config.player1Deck[i + 1] = Cards::FindCardByName("Murloc Raider");
+        config.player1Deck[i + 2] = Cards::FindCardByName("Timber Wolf");
+        config.player1Deck[i + 3] = Cards::FindCardByName("Arcane Shot");
+        config.player1Deck[i + 4] = Cards::FindCardByName("Light's Justice");
+    }
+
+    Game game(config);
+    game.Start();
+    game.ProcessUntil(Step::MAIN_ACTION);
+
+    Player* curPlayer = game.GetCurrentPlayer();
+    Player* opPlayer = game.GetOpponentPlayer();
+    curPlayer->SetTotalMana(10);
+    curPlayer->SetUsedMana(0);
+    opPlayer->SetTotalMana(10);
+    opPlayer->SetUsedMana(0);
+
+    auto& curHand = *(curPlayer->GetHandZone());
+
+    const auto card1 =
+        Generic::DrawCard(curPlayer, Cards::FindCardByName("Tol'vir Warden"));
+
+    game.Process(curPlayer, PlayCardTask::Minion(card1));
+    CHECK_EQ(curHand.GetCount(), 6);
+    CHECK_EQ(curHand[4]->card->GetCost(), 1);
+    CHECK_EQ(curHand[4]->card->GetCardType(), CardType::MINION);
+    CHECK_EQ(curHand[5]->card->GetCost(), 1);
+    CHECK_EQ(curHand[5]->card->GetCardType(), CardType::MINION);
+}
+
 // ---------------------------------------- MINION - HUNTER
 // [UNG_914] Raptor Hatchling - COST:1 [ATK:2/HP:1]
 // - Race: Beast, Set: Ungoro, Rarity: Rare
@@ -189,7 +242,6 @@ TEST_CASE("[Hunter : Minion] - UNG_914 : Raptor Hatchling")
     CHECK_EQ(curDeck.GetCount(), 1);
     CHECK_EQ(curDeck[0]->card->name, "Raptor Patriarch");
 }
-
 
 // ------------------------------------------ MINION - MAGE
 // [UNG_020] Arcanologist - COST:2 [ATK:2/HP:3]

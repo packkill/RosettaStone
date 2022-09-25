@@ -480,6 +480,13 @@ void UngoroCardsGen::AddMage(std::map<std::string, CardDef>& cards)
     // PlayReq:
     // - REQ_TARGET_TO_PLAY = 0
     // --------------------------------------------------------
+    cardDef.ClearData();
+    cardDef.power.AddPowerTask(
+        std::make_shared<DamageTask>(EntityType::TARGET, 2, true));
+    cardDef.property.playReqs = PlayReqs{ { PlayReq::REQ_TARGET_TO_PLAY, 0 } };
+    cardDef.power.AddPowerTask(
+        std::make_shared<AddCardTask>(EntityType::HAND, "UNG_809t1", 1));
+    cards.emplace("UNG_018", cardDef);
 
     // ------------------------------------------ MINION - MAGE
     // [UNG_020] Arcanologist - COST:2 [ATK:2/HP:3]

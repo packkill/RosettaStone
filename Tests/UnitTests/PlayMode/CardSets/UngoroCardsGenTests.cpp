@@ -243,6 +243,47 @@ TEST_CASE("[Hunter : Minion] - UNG_914 : Raptor Hatchling")
     CHECK_EQ(curDeck[0]->card->name, "Raptor Patriarch");
 }
 
+// ------------------------------------------- SPELL - MAGE
+// [UNG_018] Flame Geyser - COST:2
+// - Faction: Neutral, Set: Ungoro, Rarity: Common
+// --------------------------------------------------------
+// Text: Deal 2 damage.
+//       Add a 1/2 Elemental to your hand.
+// --------------------------------------------------------
+// PlayReq:
+// - REQ_TARGET_TO_PLAY = 0
+// --------------------------------------------------------
+TEST_CASE("[Mage : Spell] - UNG_018 : Flame Geyser")
+{
+    GameConfig config;
+    config.player1Class = CardClass::MAGE;
+    config.player2Class = CardClass::WARLOCK;
+    config.startPlayer = PlayerType::PLAYER1;
+    config.doFillDecks = true;
+    config.autoRun = false;
+
+    Game game(config);
+    game.Start();
+    game.ProcessUntil(Step::MAIN_ACTION);
+
+    Player* curPlayer = game.GetCurrentPlayer();
+    Player* opPlayer = game.GetOpponentPlayer();
+    curPlayer->SetTotalMana(10);
+    curPlayer->SetUsedMana(0);
+    opPlayer->SetTotalMana(10);
+    opPlayer->SetUsedMana(0);
+
+    auto& curHand = *(curPlayer->GetHandZone());
+
+    const auto card1 =
+        Generic::DrawCard(curPlayer, Cards::FindCardByName("Flame Geyser"));
+
+    game.Process(curPlayer, PlayCardTask::SpellTarget(card1, opPlayer->GetHero()));
+    CHECK_EQ(opPlayer->GetHero()->GetHealth(), 28);
+    CHECK_EQ(curHand.GetCount(), 5);
+    CHECK_EQ(curHand[4]->card->name, "Flame Elemental");
+}
+
 // ------------------------------------------ MINION - MAGE
 // [UNG_020] Arcanologist - COST:2 [ATK:2/HP:3]
 // - Set: Ungoro, Rarity: Common

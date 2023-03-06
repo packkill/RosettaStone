@@ -2193,8 +2193,7 @@ void LegacyCardsGen::AddShamanNonCollect(std::map<std::string, CardDef>& cards)
     // [NEW1_009] Healing Totem (*) - COST:1 [ATK:0/HP:2]
     // - Race: Totem, Set: Legacy, Rarity: Free
     // --------------------------------------------------------
-    // Text: At the end of your turn,
-    //       restore 1 Health to all friendly minions.
+    // Text: At the end of your turn, restore 1 Health to all friendly minions.
     // --------------------------------------------------------
     cardDef.ClearData();
     cardDef.power.AddTrigger(std::make_shared<Trigger>(TriggerType::TURN_END));
@@ -2345,7 +2344,23 @@ void LegacyCardsGen::AddWarlock(std::map<std::string, CardDef>& cards)
         std::make_shared<Trigger>(TriggerType::AFTER_ATTACK));
     cardDef.power.GetTrigger()->triggerSource = TriggerSource::SELF;
     cardDef.power.GetTrigger()->tasks = {
-        ComplexTask::DamageMinionsNextToAttack()
+        std::make_shared<FuncNumberTask>([](Playable* playable) {
+            const auto target = dynamic_cast<Minion*>(
+                playable->game->currentEventData->eventTarget);
+            if (!target)
+            {
+                return 0;
+            }
+
+            auto& taskStack = playable->game->taskStack;
+            for (auto& minion : target->GetAdjacentMinions())
+            {
+                taskStack.playables.emplace_back(minion);
+            }
+
+            return dynamic_cast<Minion*>(playable)->GetAttack();
+        }),
+        std::make_shared<DamageNumberTask>(EntityType::STACK)
     };
     cards.emplace("CS3_021", cardDef);
 

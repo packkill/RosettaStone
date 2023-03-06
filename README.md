@@ -48,8 +48,7 @@ RosettaStone is Hearthstone simulator using C++ with some reinforcement learning
   * 35% United in Stormwind (60 of 170 cards)
   * 35% Fractured in Alterac Valley (61 of 170 cards)
   * 12% Voyage to the Sunken City (22 of 170 cards)
-  * 10% Murder at Castle Nathria (17 of 170 cards)
-  * 0% March of the Lich King (0 of 1 cards)
+  * 1% Murder at Castle Nathria (2 of 135 cards)
 
 ### Wild Format
 
@@ -60,9 +59,9 @@ RosettaStone is Hearthstone simulator using C++ with some reinforcement learning
   * 6% Goblins vs Gnomes (8 of 123 Cards)
   * **100% Blackrock Mountain (31 of 31 Cards)**
   * 8% The Grand Tournament (11 of 132 Cards)
-  * **100% The League of Explorers (45 of 45 Cards)**
+  * 91% The League of Explorers (41 of 45 Cards)
   * 5% Whispers of the Old Gods (8 of 134 Cards)
-  * **100% One Night in Karazhan (45 of 45 Cards)**
+  * 15% One Night in Karazhan (7 of 45 Cards)
   * 2% Mean Streets of Gadgetzan (3 of 132 Cards)
   * 7% Journey to Un'Goro (10 of 135 Cards)
   * 4% Knights of the Frozen Throne (6 of 135 Cards)

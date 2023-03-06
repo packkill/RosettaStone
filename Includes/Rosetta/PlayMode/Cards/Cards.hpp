@@ -86,10 +86,6 @@ class Cards
     static const std::vector<Card*> GetDiscoverCards(CardClass baseClass,
                                                      FormatType format);
 
-    //! Returns a list of basic Totem cards.
-    //! \return A list of basic Totem cards.
-    static std::vector<Card*> GetBasicTotems();
-
     //! Returns a list of Lackey cards.
     //! \return A list of Lackey cards.
     static std::vector<Card*> GetLackeys();
@@ -193,7 +189,6 @@ class Cards
     static std::vector<Card*> m_allStandardCards;
     static std::vector<Card*> m_allWildCards;
     static std::vector<Card*> m_allClassicCards;
-    static std::vector<Card*> m_basicTotems;
     static std::vector<Card*> m_lackeys;
     static std::vector<Card*> m_poisons;
 };

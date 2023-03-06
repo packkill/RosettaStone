@@ -170,21 +170,11 @@ void AuraEffects::SetAttack(int value) const
 
 int AuraEffects::GetCannotAttackHeroes() const
 {
-    if (m_type != CardType::HERO)
-    {
-        return 0;
-    }
-
     return m_data[2];
 }
 
 void AuraEffects::SetCannotAttackHeroes(int value) const
 {
-    if (m_type != CardType::HERO)
-    {
-        throw std::logic_error("Not Implemented!");
-    }
-
     m_data[2] = value;
 }
 
@@ -200,21 +190,11 @@ void AuraEffects::SetHeroPowerDamage(int value) const
 
 int AuraEffects::GetHealth() const
 {
-    if (m_type != CardType::MINION)
-    {
-        return 0;
-    }
-
     return m_data[2];
 }
 
 void AuraEffects::SetHealth(int value) const
 {
-    if (m_type != CardType::MINION)
-    {
-        throw std::logic_error("Not Implemented!");
-    }
-
     m_data[2] = value;
 }
 
@@ -270,21 +250,11 @@ void AuraEffects::SetLifesteal(int value) const
 
 int AuraEffects::GetCantAttack() const
 {
-    if (m_type != CardType::MINION)
-    {
-        return 0;
-    }
-
     return m_data[8];
 }
 
 void AuraEffects::SetCantAttack(int value) const
 {
-    if (m_type != CardType::MINION)
-    {
-        throw std::logic_error("Not Implemented!");
-    }
-
     m_data[8] = value;
 }
 }  // namespace RosettaStone::PlayMode

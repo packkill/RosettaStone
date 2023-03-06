@@ -104,7 +104,6 @@
 #include <Rosetta/PlayMode/CardSets/NaxxCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/OgCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/Placeholder202204CardsGen.hpp>
-#include <Rosetta/PlayMode/CardSets/ReturnOfTheLichKingCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/RevendrethCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/ScholomanceCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/StormwindCardsGen.hpp>
@@ -234,7 +233,6 @@
 #include <Rosetta/PlayMode/Tasks/SimpleTasks/GetPlayerGameTagTask.hpp>
 #include <Rosetta/PlayMode/Tasks/SimpleTasks/GetPlayerManaTask.hpp>
 #include <Rosetta/PlayMode/Tasks/SimpleTasks/HealFullTask.hpp>
-#include <Rosetta/PlayMode/Tasks/SimpleTasks/HealNumberTask.hpp>
 #include <Rosetta/PlayMode/Tasks/SimpleTasks/HealTask.hpp>
 #include <Rosetta/PlayMode/Tasks/SimpleTasks/IncludeAdjacentTask.hpp>
 #include <Rosetta/PlayMode/Tasks/SimpleTasks/IncludeTask.hpp>

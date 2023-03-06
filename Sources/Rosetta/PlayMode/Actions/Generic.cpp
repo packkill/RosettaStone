@@ -198,7 +198,6 @@ void ChangeEntity(Player* player, Playable* playable, Card* newCard,
 
     if (playable->card->GetCardType() == newCard->GetCardType())
     {
-        playable->Reset();
         playable->card = newCard;
 
         for (const auto& gameTag : newCard->gameTags)

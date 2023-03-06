@@ -364,7 +364,7 @@ void TheSunkenCityCardsGen::AddHunter(std::map<std::string, CardDef>& cards)
     // - Set: THE_SUNKEN_CITY, Rarity: Rare
     // --------------------------------------------------------
     // Text: After your hero attacks, <b>Dredge</b>.
-    //       If it's a Beast, reduce its Cost by (2).
+    //       If it's a Beast, reduce its Cost by (3).
     // --------------------------------------------------------
     // GameTag:
     // - DREDGE = 1
@@ -2604,7 +2604,7 @@ void TheSunkenCityCardsGen::AddDemonHunter(
     // - Set: THE_SUNKEN_CITY, Rarity: Rare
     // --------------------------------------------------------
     // Text: <b>Rush</b>. <b>Deathrattle:</b>
-    //       Put a 'Sunken Defector' on the bottom of your deck.
+    //       Put a 'Sunken Defector' on the�bottom of your deck.
     // --------------------------------------------------------
     // GameTag:
     // - DEATHRATTLE = 1
@@ -3001,7 +3001,7 @@ void TheSunkenCityCardsGen::AddNeutral(std::map<std::string, CardDef>& cards)
     // --------------------------------------------------------
 
     // --------------------------------------- MINION - NEUTRAL
-    // [TSC_052] School Teacher - COST:4 [ATK:4/HP:4]
+    // [TSC_052] School Teacher - COST:4 [ATK:4/HP:3]
     // - Race: Naga, Set: THE_SUNKEN_CITY, Rarity: Epic
     // --------------------------------------------------------
     // Text: <b>Battlecry:</b> Add a 1/1 Nagaling to your hand.
@@ -3274,7 +3274,7 @@ void TheSunkenCityCardsGen::AddNeutral(std::map<std::string, CardDef>& cards)
     // --------------------------------------------------------
 
     // --------------------------------------- MINION - NEUTRAL
-    // [TSC_926] Smothering Starfish - COST:4 [ATK:2/HP:4]
+    // [TSC_926] Smothering Starfish - COST:3 [ATK:2/HP:4]
     // - Race: Beast, Set: THE_SUNKEN_CITY, Rarity: Epic
     // --------------------------------------------------------
     // Text: <b>Battlecry:</b> <b>Silence</b> ALL other minions.

@@ -21,9 +21,6 @@ class Entity;
 class TriggerManager
 {
  public:
-    //! Callback for trigger when a game begins.
-    void OnStartGameTrigger();
-
     //! Callback for trigger when player's turn is started.
     //! \param sender An entity that is the source of trigger.
     void OnStartTurnTrigger(Entity* sender);
@@ -136,7 +133,6 @@ class TriggerManager
     //! \param sender An entity that is the source of trigger.
     void OnManaCrystalTrigger(Entity* sender);
 
-    TriggerEvent startGameTrigger;
     TriggerEvent startTurnTrigger;
     TriggerEvent endTurnTrigger;
     TriggerEvent addCardTrigger;

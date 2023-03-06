@@ -8,11 +8,6 @@
 
 namespace RosettaStone::PlayMode
 {
-void TriggerManager::OnStartGameTrigger()
-{
-    startGameTrigger(nullptr);
-}
-
 void TriggerManager::OnStartTurnTrigger(Entity* sender)
 {
     startTurnTrigger(sender);

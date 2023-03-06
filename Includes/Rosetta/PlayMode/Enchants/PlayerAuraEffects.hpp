@@ -63,7 +63,6 @@ class PlayerAuraEffects
     int m_chooseBoth = 0;
     int m_heroPowerDamage = 0;
     int m_takeDamageDouble = 0;
-    int m_takeOneDamageAtTime = 0;
 };
 }  // namespace RosettaStone::PlayMode
 

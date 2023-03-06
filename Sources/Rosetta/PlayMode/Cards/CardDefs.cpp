@@ -24,7 +24,6 @@
 #include <Rosetta/PlayMode/CardSets/NaxxCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/OgCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/Placeholder202204CardsGen.hpp>
-#include <Rosetta/PlayMode/CardSets/ReturnOfTheLichKingCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/RevendrethCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/ScholomanceCardsGen.hpp>
 #include <Rosetta/PlayMode/CardSets/StormwindCardsGen.hpp>
@@ -75,7 +74,6 @@ CardDefs::CardDefs()
     StormwindCardsGen::AddAll(m_data);
     TheSunkenCityCardsGen::AddAll(m_data);
     RevendrethCardsGen::AddAll(m_data);
-    ReturnOfTheLichKingCardsGen::AddAll(m_data);
     Placeholder202204CardsGen::AddAll(m_data);
 }
 

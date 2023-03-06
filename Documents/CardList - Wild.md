@@ -864,17 +864,17 @@ LOE | LOE_089 | Wobbling Runts | O
 LOE | LOE_092 | Arch-Thief Rafaam | O
 LOE | LOE_104 | Entomb | O
 LOE | LOE_105 | Explorer's Hat | O
-LOE | LOE_107 | Eerie Statue | O
-LOE | LOE_110 | Ancient Shade | O
-LOE | LOE_111 | Excavated Evil | O
+LOE | LOE_107 | Eerie Statue |  
+LOE | LOE_110 | Ancient Shade |  
+LOE | LOE_111 | Excavated Evil |  
 LOE | LOE_113 | Everyfin is Awesome | O
 LOE | LOE_115 | Raven Idol | O
 LOE | LOE_116 | Reliquary Seeker | O
 LOE | LOE_118 | Cursed Blade | O
-LOE | LOE_119 | Animated Armor | O
+LOE | LOE_119 | Animated Armor |  
 LOE | LOEA10_3 | Murloc Tinyfin | O
 
-- Progress: 100% (45 of 45 Cards)
+- Progress: 91% (41 of 45 Cards)
 
 ## Whispers of the Old Gods
 
@@ -1021,53 +1021,53 @@ OG | OG_340 | Soggoth the Slitherer |
 
 Set | ID | Name | Implemented
 :---: | :---: | :---: | :---:
-KARA | KAR_004 | Cat Trick | O
-KARA | KAR_005 | Kindly Grandmother | O
+KARA | KAR_004 | Cat Trick |  
+KARA | KAR_005 | Kindly Grandmother |  
 KARA | KAR_006 | Cloaked Huntress | O
 KARA | KAR_009 | Babbling Book | O
-KARA | KAR_010 | Nightbane Templar | O
-KARA | KAR_011 | Pompous Thespian | O
-KARA | KAR_013 | Purify | O
-KARA | KAR_021 | Wicked Witchdoctor | O
-KARA | KAR_025 | Kara Kazham! | O
-KARA | KAR_026 | Protect the King! | O
-KARA | KAR_028 | Fool's Bane | O
-KARA | KAR_029 | Runic Egg | O
-KARA | KAR_030a | Pantry Spider | O
-KARA | KAR_033 | Book Wyrm | O
-KARA | KAR_035 | Priest of the Feast | O
+KARA | KAR_010 | Nightbane Templar |  
+KARA | KAR_011 | Pompous Thespian |  
+KARA | KAR_013 | Purify |  
+KARA | KAR_021 | Wicked Witchdoctor |  
+KARA | KAR_025 | Kara Kazham! |  
+KARA | KAR_026 | Protect the King! |  
+KARA | KAR_028 | Fool's Bane |  
+KARA | KAR_029 | Runic Egg |  
+KARA | KAR_030a | Pantry Spider |  
+KARA | KAR_033 | Book Wyrm |  
+KARA | KAR_035 | Priest of the Feast |  
 KARA | KAR_036 | Arcane Anomaly | O
-KARA | KAR_037 | Avian Watcher | O
-KARA | KAR_041 | Moat Lurker | O
-KARA | KAR_044 | Moroes | O
-KARA | KAR_057 | Ivory Knight | O
-KARA | KAR_061 | The Curator | O
-KARA | KAR_062 | Netherspite Historian | O
-KARA | KAR_063 | Spirit Claws | O
+KARA | KAR_037 | Avian Watcher |  
+KARA | KAR_041 | Moat Lurker |  
+KARA | KAR_044 | Moroes |  
+KARA | KAR_057 | Ivory Knight |  
+KARA | KAR_061 | The Curator |  
+KARA | KAR_062 | Netherspite Historian |  
+KARA | KAR_063 | Spirit Claws |  
 KARA | KAR_065 | Menagerie Warden | O
 KARA | KAR_069 | Swashburglar | O
-KARA | KAR_070 | Ethereal Peddler | O
+KARA | KAR_070 | Ethereal Peddler |  
 KARA | KAR_073 | Maelstrom Portal | O
-KARA | KAR_075 | Moonglade Portal | O
-KARA | KAR_076 | Firelands Portal | O
-KARA | KAR_077 | Silvermoon Portal | O
-KARA | KAR_089 | Malchezaar's Imp | O
-KARA | KAR_091 | Ironforge Portal | O
-KARA | KAR_092 | Medivh's Valet | O
-KARA | KAR_094 | Deadly Fork | O
-KARA | KAR_095 | Zoobot | O
-KARA | KAR_096 | Prince Malchezaar | O
-KARA | KAR_097 | Medivh, the Guardian | O
-KARA | KAR_114 | Barnes | O
-KARA | KAR_204 | Onyx Bishop | O
-KARA | KAR_205 | Silverware Golem | O
+KARA | KAR_075 | Moonglade Portal |  
+KARA | KAR_076 | Firelands Portal |  
+KARA | KAR_077 | Silvermoon Portal |  
+KARA | KAR_089 | Malchezaar's Imp |  
+KARA | KAR_091 | Ironforge Portal |  
+KARA | KAR_092 | Medivh's Valet |  
+KARA | KAR_094 | Deadly Fork |  
+KARA | KAR_095 | Zoobot |  
+KARA | KAR_096 | Prince Malchezaar |  
+KARA | KAR_097 | Medivh, the Guardian |  
+KARA | KAR_114 | Barnes |  
+KARA | KAR_204 | Onyx Bishop |  
+KARA | KAR_205 | Silverware Golem |  
 KARA | KAR_300 | Enchanted Raven | O
-KARA | KAR_702 | Menagerie Magician | O
-KARA | KAR_710 | Arcanosmith | O
-KARA | KAR_711 | Arcane Giant | O
-KARA | KAR_712 | Violet Illusionist | O
+KARA | KAR_702 | Menagerie Magician |  
+KARA | KAR_710 | Arcanosmith |  
+KARA | KAR_711 | Arcane Giant |  
+KARA | KAR_712 | Violet Illusionist |  
 
-- Progress: 100% (45 of 45 Cards)
+- Progress: 15% (7 of 45 Cards)
 
 ## Mean Streets of Gadgetzan
 

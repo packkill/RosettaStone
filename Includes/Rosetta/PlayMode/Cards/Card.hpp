@@ -83,10 +83,6 @@ class Card
     //! \return The flag that indicates whether it is quest.
     bool IsQuest() const;
 
-    //! Returns the flag that indicates whether it is basic Totem.
-    //! \return The flag that indicates whether it is basic Totem.
-    bool IsBasicTotem() const;
-
     //! Returns the flag that indicates whether it is Lackey.
     //! \return The flag that indicates whether it is Lackey.
     bool IsLackey() const;

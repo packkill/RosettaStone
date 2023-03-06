@@ -49,6 +49,23 @@ class ComplexTask
         };
     }
 
+    //! Returns a list of task for summoning a random basic Totem.
+    static TaskList SummonRandomBasicTotem()
+    {
+        return TaskList{
+            std::make_shared<SimpleTasks::IncludeTask>(EntityType::SOURCE),
+            std::make_shared<SimpleTasks::FuncPlayableTask>(
+                [=](const std::vector<Playable*>& playables) {
+                    auto basicTotems = Cards::GetBasicTotems();
+                    const auto totem = Entity::GetFromCard(
+                        playables[0]->player, *Random::get(basicTotems));
+
+                    return std::vector<Playable*>{ totem };
+                }),
+            std::make_shared<SimpleTasks::SummonTask>()
+        };
+    }
+
     //! Returns a list of task for summoning a minion from your deck.
     static TaskList SummonMinionFromDeck()
     {
@@ -255,6 +272,21 @@ class ComplexTask
         };
     }
 
+    //! Returns a list of task for giving buff to a random minion in field.
+    //! \param list A list of self conditions to filter card(s).
+    //! \param enchantmentCardID The ID of enchantment card to give buff.
+    static TaskList GiveBuffToRandomMinionInField(
+        std::string_view enchantmentCardID, const SelfCondList& list)
+    {
+        return TaskList{
+            std::make_shared<SimpleTasks::IncludeTask>(EntityType::MINIONS),
+            std::make_shared<SimpleTasks::FilterStackTask>(list),
+            std::make_shared<SimpleTasks::RandomTask>(EntityType::STACK, 1),
+            std::make_shared<SimpleTasks::AddEnchantmentTask>(enchantmentCardID,
+                                                              EntityType::STACK)
+        };
+    }
+
     //! Returns a list of task for giving buff to another random minion
     //! in field.
     //! \param enchantmentCardID The ID of enchantment card to give buff.
@@ -366,6 +398,32 @@ class ComplexTask
             std::make_shared<SimpleTasks::RandomTask>(entityType, numTarget),
             std::make_shared<SimpleTasks::DamageTask>(EntityType::STACK, damage,
                                                       isSpellDamage)
+        };
+    }
+
+    //! Returns a list of task for taking damages the minions
+    //! next to whomever this attacks.
+    static TaskList DamageMinionsNextToAttack()
+    {
+        return TaskList{
+            std::make_shared<SimpleTasks::FuncNumberTask>(
+                [](Playable* playable) {
+                    const auto target = dynamic_cast<Minion*>(
+                        playable->game->currentEventData->eventTarget);
+                    if (!target)
+                    {
+                        return 0;
+                    }
+
+                    auto& taskStack = playable->game->taskStack;
+                    for (auto& minion : target->GetAdjacentMinions())
+                    {
+                        taskStack.playables.emplace_back(minion);
+                    }
+
+                    return dynamic_cast<Minion*>(playable)->GetAttack();
+                }),
+            std::make_shared<SimpleTasks::DamageNumberTask>(EntityType::STACK)
         };
     }
 };
